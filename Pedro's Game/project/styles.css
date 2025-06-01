@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #2d2d2d;
-    --accent-color: #ff4757;
-    --text-color: #e0e0e0;
+    --primary-color: #2a1a4a; 
+    --secondary-color: #3b2a6a; 
+    --accent-color: #9b59b6;
+    --text-color: #f6f1f1;  
     --transition: all 0.3s ease;
 }
+
 
 * {
     margin: 0;
@@ -42,6 +43,11 @@ nav {
     animation: float 3s ease-in-out infinite;
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -52,6 +58,7 @@ nav {
     display: flex;
     gap: 2rem;
     align-items: center;
+    padding-right: 250px;
 }
 
 .nav-items a {
@@ -116,6 +123,27 @@ header p {
     animation: fadeInUp 1s ease;
 }
 
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-section select {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-section select:hover {
+    background-color: var(--accent-color);
+}
+
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -157,9 +185,17 @@ header p {
     color: var(--accent-color);
 }
 
-.game-card p {
+.game-card .price {
     padding: 0 1rem;
     font-weight: bold;
+    color: var(--accent-color);
+}
+
+.game-card .description {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+    min-height: 100px;
 }
 
 .game-card button {
@@ -177,7 +213,7 @@ header p {
 }
 
 .game-card button:hover {
-    background-color: #ff2e43;
+    background-color: #e7061d;
 }
 
 .cart-icon {
@@ -218,9 +254,29 @@ header p {
     right: 0;
 }
 
-.cart-sidebar h2 {
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
+}
+
+.cart-header h2 {
     color: var(--accent-color);
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-cart:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 .cart-total {
@@ -243,33 +299,27 @@ header p {
     letter-spacing: 1px;
 }
 
-.about-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-}
-
-.about-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-section h2 {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: var(--accent-color);
-}
-
 footer {
     background-color: var(--secondary-color);
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
 }
+
+.Redes{
+    font-size: large;
+    font-weight: bold;
+}
+
+.contato{
+    color: white;
+}
+
+a.contato {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 @keyframes fadeIn {
     to { opacity: 1; }
@@ -284,6 +334,11 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 @media (max-width: 768px) {
@@ -302,5 +357,15 @@ footer {
     .cart-sidebar {
         width: 100%;
         right: -100%;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-section select {
+        width: 100%;
+        max-width: 300px;
     }
 }

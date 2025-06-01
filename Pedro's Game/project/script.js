@@ -5,6 +5,22 @@ function toggleCart() {
     cartSidebar.classList.toggle('active');
 }
 
+function filterByGenre() {
+    const genreFilter = document.getElementById('genreFilter').value;
+    const games = document.querySelectorAll('.game-card');
+
+    games.forEach(game => {
+        const genres = game.getAttribute('data-genre').split(' '); // pega os gêneros separados por espaço
+        
+        if (genreFilter === 'all' || genres.includes(genreFilter)) {
+            game.style.display = 'block';
+        } else {
+            game.style.display = 'none';
+        }
+    });
+}
+
+
 function addToCart(id, title, price) {
     const existingItem = cart.find(item => item.id === id);
     
