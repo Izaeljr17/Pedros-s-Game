@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVerse - Loja de Jogos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">GameVerse</div>
+        <div class="nav-items">
+            <a href="#" class="active">Início</a>
+            <a href="#jogos">Jogos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="login.html">Login</a>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2>Seu Carrinho</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: R$ <span id="cart-total">0.00</span></p>
+            <button onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <header>
+        <h1>Bem-vindo à GameVerse</h1>
+        <p>Sua nova aventura começa aqui</p>
+    </header>
+
+    <section id="jogos" class="games-section">
+        <h2>Jogos em Destaque</h2>
+        <div class="games-grid">
+            <div class="game-card" data-id="1">
+                <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg" alt="Cyberpunk 2077">
+                <h3>Cyberpunk 2077</h3>
+                <p>R$ 259,90</p>
+                <button onclick="addToCart(1, 'Cyberpunk 2077', 259.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="2">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg" alt="Red Dead Redemption 2">
+                <h3>Red Dead Redemption 2</h3>
+                <p>R$ 299,90</p>
+                <button onclick="addToCart(2, 'Red Dead Redemption 2', 299.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="3">
+                <img src="https://images.pexels.com/photos/2885014/pexels-photo-2885014.jpeg" alt="The Witcher 3">
+                <h3>The Witcher 3</h3>
+                <p>R$ 159,90</p>
+                <button onclick="addToCart(3, 'The Witcher 3', 159.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="4">
+                <img src="https://images.pexels.com/photos/7915357/pexels-photo-7915357.jpeg" alt="God of War">
+                <h3>God of War</h3>
+                <p>R$ 199,90</p>
+                <button onclick="addToCart(4, 'God of War', 199.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="5">
+                <img src="https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg" alt="Elden Ring">
+                <h3>Elden Ring</h3>
+                <p>R$ 299,90</p>
+                <button onclick="addToCart(5, 'Elden Ring', 299.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="6">
+                <img src="https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg" alt="Spider-Man">
+                <h3>Spider-Man</h3>
+                <p>R$ 249,90</p>
+                <button onclick="addToCart(6, 'Spider-Man', 249.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="7">
+                <img src="https://images.pexels.com/photos/7862657/pexels-photo-7862657.jpeg" alt="Horizon Zero Dawn">
+                <h3>Horizon Zero Dawn</h3>
+                <p>R$ 199,90</p>
+                <button onclick="addToCart(7, 'Horizon Zero Dawn', 199.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="game-card" data-id="8">
+                <img src="https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg" alt="Final Fantasy VII">
+                <h3>Final Fantasy VII</h3>
+                <p>R$ 349,90</p>
+                <button onclick="addToCart(8, 'Final Fantasy VII', 349.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+        <h2>Sobre a GameVerse</h2>
+        <p>Somos uma loja dedicada aos gamers, trazendo os melhores títulos e experiências para nossos jogadores. Nossa seleção especial garante diversão e aventura para todos os gostos.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GameVerse. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
