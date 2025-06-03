@@ -1,59 +1,66 @@
+/* === VARIÁVEIS DE CORES E TRANSIÇÃO GERAL === */
 :root {
-    --primary-color: #2a1a4a; 
-    --secondary-color: #3b2a6a; 
-    --accent-color: #9b59b6;
-    --text-color: #f6f1f1;  
-    --transition: all 0.3s ease;
+    --primary-color: #2a1a4a; /* Cor de fundo principal do site */
+    --secondary-color: #3b2a6a; /* Cor de fundo secundária para cartões e seções */
+    --accent-color: #9b59b6; /* Cor de destaque para botões, títulos, etc. */
+    --text-color: #f6f1f1;  /* Cor padrão do texto */
+    --transition: all 0.3s ease; /* Suaviza transições de animações */
 }
 
-
+/* === RESET GERAL === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* === ESTILO BASE DO BODY === */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Usa cor definida na root */
     color: var(--text-color);
     line-height: 1.6;
 }
 
+/* === NAVBAR FIXA E TRANSLÚCIDA === */
 nav {
-    background-color: rgba(26, 26, 26, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: rgba(26, 26, 26, 0.9); /* Fundo escuro com transparência */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Garante que fique sobre os outros elementos */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* === LOGO ANIMADA === */
 .logo {
     font-size: 2rem;
     font-weight: bold;
     color: var(--accent-color);
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite; /* Animação contínua */
 }
 
+/* Remove sublinhado do link da logo */
 .logo a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Animação flutuante da logo */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
 
+/* === MENU DE NAVEGAÇÃO === */
 .nav-items {
     display: flex;
     gap: 2rem;
@@ -61,6 +68,7 @@ nav {
     padding-right: 250px;
 }
 
+/* Estilo dos links da navbar */
 .nav-items a {
     color: var(--text-color);
     text-decoration: none;
@@ -68,6 +76,7 @@ nav {
     position: relative;
 }
 
+/* Linha inferior animada nos links */
 .nav-items a::after {
     content: '';
     position: absolute;
@@ -79,11 +88,13 @@ nav {
     transition: var(--transition);
 }
 
+/* Expande a linha ao passar o mouse ou quando estiver ativa */
 .nav-items a:hover::after,
 .nav-items a.active::after {
     width: 100%;
 }
 
+/* === SEÇÃO DE CABEÇALHO COM IMAGEM DE FUNDO === */
 header {
     height: 100vh;
     display: flex;
@@ -98,6 +109,7 @@ header {
     padding: 2rem;
 }
 
+/* Título principal */
 header h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -105,6 +117,7 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Subtítulo com animação */
 header p {
     font-size: 1.5rem;
     opacity: 0;
@@ -112,10 +125,12 @@ header p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* === SEÇÃO DE JOGOS === */
 .games-section {
     padding: 4rem 2rem;
 }
 
+/* Título da seção */
 .games-section h2 {
     text-align: center;
     margin-bottom: 3rem;
@@ -123,6 +138,7 @@ header p {
     animation: fadeInUp 1s ease;
 }
 
+/* === FILTRO DE GÊNERO OU CATEGORIA === */
 .filter-section {
     display: flex;
     justify-content: center;
@@ -144,14 +160,16 @@ header p {
     background-color: var(--accent-color);
 }
 
+/* === GRID DE CARTÕES DOS JOGOS === */
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
+/* === CARTÕES DE JOGO === */
 .game-card {
     background-color: var(--secondary-color);
     border-radius: 15px;
@@ -163,6 +181,7 @@ header p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Efeito hover no cartão */
 .game-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(255, 71, 87, 0.2);
@@ -198,10 +217,10 @@ header p {
     min-height: 100px;
 }
 
+/* Botão de adicionar ao carrinho */
 .game-card button {
     width: 100%;
     padding: 1rem;
-    border: none;
     background-color: var(--accent-color);
     color: white;
     cursor: pointer;
@@ -216,6 +235,7 @@ header p {
     background-color: #e7061d;
 }
 
+/* === ÍCONE DO CARRINHO === */
 .cart-icon {
     position: relative;
     cursor: pointer;
@@ -226,6 +246,7 @@ header p {
     transform: scale(1.1);
 }
 
+/* Contador de itens no carrinho */
 #cart-count {
     position: absolute;
     top: -8px;
@@ -237,9 +258,10 @@ header p {
     font-size: 0.8rem;
 }
 
+/* === SIDEBAR DO CARRINHO === */
 .cart-sidebar {
     position: fixed;
-    right: -400px;
+    right: -400px; /* Escondido inicialmente */
     top: 0;
     width: 400px;
     height: 100vh;
@@ -250,6 +272,7 @@ header p {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Quando o carrinho estiver ativo */
 .cart-sidebar.active {
     right: 0;
 }
@@ -279,6 +302,7 @@ header p {
     transform: scale(1.1);
 }
 
+/* Total e botão de finalizar compra */
 .cart-total {
     position: absolute;
     bottom: 2rem;
@@ -299,6 +323,7 @@ header p {
     letter-spacing: 1px;
 }
 
+/* === RODAPÉ === */
 footer {
     background-color: var(--secondary-color);
     text-align: center;
@@ -306,12 +331,12 @@ footer {
     margin-top: 4rem;
 }
 
-.Redes{
+.Redes {
     font-size: large;
     font-weight: bold;
 }
 
-.contato{
+.contato {
     color: white;
 }
 
@@ -320,7 +345,7 @@ a.contato {
     color: inherit;
 }
 
-
+/* === ANIMAÇÕES === */
 @keyframes fadeIn {
     to { opacity: 1; }
 }
@@ -341,6 +366,7 @@ a.contato {
     50% { transform: scale(1.2); }
 }
 
+/* === RESPONSIVIDADE === */
 @media (max-width: 768px) {
     nav {
         padding: 1rem;
@@ -356,7 +382,7 @@ a.contato {
 
     .cart-sidebar {
         width: 100%;
-        right: -100%;
+        right: -100%; /* Esconde lateral inteira em telas menores */
     }
 
     .filter-section {
