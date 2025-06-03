@@ -1,8 +1,0 @@
-{
-  "name": "simple-server",
-  "version": "1.0.0",
-  "description": "Simple HTTP server",
-  "scripts": {
-    "start": "node \"Pedro's Game/project/server.js\""
-  }
-}
